@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Be My Valentine 💖</title>
+
   <style>
     body {
       margin: 0;
       height: 100vh;
       font-family: 'Segoe UI', sans-serif;
+
+      /* CHANGE IMAGE NAME HERE IF NEEDED */
       background: url("pic2.jpg") no-repeat center center/cover;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -28,9 +32,11 @@
       margin-bottom: 30px;
     }
 
+    /* Expanded movement area */
     .buttons {
       position: relative;
-      height: 120px;
+      height: 250px;
+      width: 100%;
     }
 
     button {
@@ -59,10 +65,11 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="card">
-    <h1>Would you be my Valentine? 💘</h1>
+    <h1>Would you be my Valentine, my dearest Titli ? 💘</h1>
 
     <div class="buttons">
       <button id="yes" onclick="accepted()">Yes 💖</button>
@@ -74,8 +81,16 @@
     const noBtn = document.getElementById("no");
 
     noBtn.addEventListener("mouseenter", () => {
-      const x = Math.random() * 250;
-      const y = Math.random() * 80;
+
+      // get movement boundary dynamically
+      const parent = noBtn.parentElement;
+
+      const maxX = parent.clientWidth - noBtn.offsetWidth;
+      const maxY = parent.clientHeight - noBtn.offsetHeight;
+
+      // generate random position inside container
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
 
       noBtn.style.left = x + "px";
       noBtn.style.top = y + "px";
