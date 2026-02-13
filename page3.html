@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>I Won't Give Up 💖</title>
+
+<style>
+body {
+  margin:0;
+  height:100vh;
+  font-family:'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card {
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+  width:350px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1 { color:#e91e63; }
+
+.buttons {
+  position:relative;
+  height:250px;
+}
+
+button {
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  position:absolute;
+}
+
+/* BIG YES BUTTON */
+#yes {
+  background:#e91e63;
+  color:white;
+  font-size:26px;
+  padding:20px 55px;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:10px;
+}
+
+/* NO BUTTON */
+#no {
+  background:#999;
+  color:white;
+  padding:12px 25px;
+  left:20%;
+  top:10px;
+  transition:0.05s linear; /* FAST movement */
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>Again no? 😢<br>
+But I will always try, not run away.<br>
+I love you yaar!! 💖</h1>
+
+<div class="buttons">
+<button id="yes" onclick="accepted()">Yes 💖</button>
+<button id="no">No 🙃</button>
+</div>
+</div>
+
+<script>
+const noBtn=document.getElementById("no");
+
+noBtn.addEventListener("mouseenter",()=>{
+  const parent=noBtn.parentElement;
+
+  const maxX=parent.clientWidth-noBtn.offsetWidth;
+  const maxY=parent.clientHeight-noBtn.offsetHeight;
+
+  const x=Math.random()*maxX;
+  const y=Math.random()*maxY;
+
+  noBtn.style.left=x+"px";
+  noBtn.style.top=y+"px";
+});
+
+function accepted(){
+  window.location.href="accepted.html";
+}
+</script>
+
+</body>
+</html>
