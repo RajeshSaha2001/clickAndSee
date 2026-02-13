@@ -73,33 +73,19 @@
 
     <div class="buttons">
       <button id="yes" onclick="accepted()">Yes 💖</button>
-      <button id="no">No 🙃</button>
+      <button id="no" onclick="goNext()">No 🙃</button>
     </div>
   </div>
 
   <script>
-    const noBtn = document.getElementById("no");
+function goNext() {
+  window.location.href = "page2.html";
+}
 
-    noBtn.addEventListener("mouseenter", () => {
-
-      // get movement boundary dynamically
-      const parent = noBtn.parentElement;
-
-      const maxX = parent.clientWidth - noBtn.offsetWidth;
-      const maxY = parent.clientHeight - noBtn.offsetHeight;
-
-      // generate random position inside container
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
-
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
-    });
-
-    function accepted() {
-      window.location.href = "accepted.html";
-    }
-  </script>
+function accepted() {
+  window.location.href = "accepted.html";
+}
+</script>
 
 </body>
 </html>
